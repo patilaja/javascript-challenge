@@ -1,6 +1,6 @@
 # JavaScript and DOM Manipulation
 
-![UFO Sample Output](Images/Output.PNG)
+![UFO Sample Output](Images/output.PNG)
 
 ## Background
 
