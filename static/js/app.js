@@ -32,6 +32,7 @@ function resetFilter(){
     document.getElementById("city").value = "";
     document.getElementById("state").value = "";
     document.getElementById("country").checked = false;
+    document.getElementById("countryAll").checked = true;
     document.getElementById("shape").value = "";
     
     //populateData - with reset filter values
@@ -50,9 +51,11 @@ function setFilter(){
     city = document.getElementById("city").value.toLowerCase();
     state = document.getElementById("state").value;
 
-    //Check if check-box is checked
+    //Check if radio button is selected
     if (document.getElementById("country").checked == true){
         country = document.getElementById("country").value;
+    }else if (document.getElementById("countryAll").checked == true){
+        country = document.getElementById("countryAll").value;
     }
     
     shape = document.getElementById("shape").value;
@@ -87,7 +90,7 @@ function populateData()
         tdata = tdata.filter(d => {return d.state === state;});
 
     }
-    //check county checkbox is checked
+    //check county radio button is checked
     if (document.getElementById("country").checked == true){
          tdata = tdata.filter(d=> {return d.country === country.trim();});
      }

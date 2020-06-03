@@ -1,5 +1,7 @@
 # JavaScript and DOM Manipulation
 
+![UFO Sample Output](Images/Output.PNG)
+
 ## Background
 
 Write a JS code that will create a table dynamically based upon a given data set. Allow our users to filter the table data for specific values. 
