@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    //Date Picker code - 
+    $(function () {
+      $("#datepicker").datepicker({ minDate: "-500M", maxDate: "+6M +15D" });
+    });
+  </script>
+</head>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">UFO Sightings
+            <img class="nav-ufo" src="static/images/ufo.svg">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>UFO Sightings</h1>
+      <p>The Truth is Out There</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a Date</label>
+                        <input class="form-control" id="datepicker" type="text" placeholder="">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="city">Enter City</label>
+                        <input class="form-control" id="city" type="text" placeholder="">
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="state">Select State</label>
+                        <select id="state">
+                          <option value="">Select...</option>
+                          <option value="al`">Alabama</option>
+                          <option value="ak`">Alaska</option>
+                          <option value="az`">Arizona</option>
+                          <option value="ar">Arkansas</option>
+                          <option value="ca">California</option>
+                          <option value="co">Colorado</option>
+                          <option value="ct">Connecticut</option>
+                          <option value="de">Delaware</option>
+                          <option value="dc">District Of Columbia</option>
+                          <option value="fl">Florida</option>
+                          <option value="ga">Georgia</option>
+                          <option value="hi">Hawaii</option>
+                          <option value="id">Idaho</option>
+                          <option value="il">Illinois</option>
+                          <option value="in">Indiana</option>
+                          <option value="ia">Iowa</option>
+                          <option value="ks">Kansas</option>
+                          <option value="ky">Kentucky</option>
+                          <option value="la">Louisiana</option>
+                          <option value="me">Maine</option>
+                          <option value="md">Maryland</option>
+                          <option value="ma">Massachusetts</option>
+                          <option value="mi">Michigan</option>
+                          <option value="mn">Minnesota</option>
+                          <option value="ms">Mississippi</option>
+                          <option value="mo">Missouri</option>
+                          <option value="mt">Montana</option>
+                          <option value="ne">Nebraska</option>
+                          <option value="nv">Nevada</option>
+                          <option value="nh">New Hampshire</option>
+                          <option value="nj">New Jersey</option>
+                          <option value="nm">New Mexico</option>
+                          <option value="ny">New York</option>
+                          <option value="nc">North Carolina</option>
+                          <option value="nd">North Dakota</option>
+                          <option value="oh">Ohio</option>
+                          <option value="ok">Oklahoma</option>
+                          <option value="or">Oregon</option>
+                          <option value="pa">Pennsylvania</option>
+                          <option value="ri">Rhode Island</option>
+                          <option value="sc">South Carolina</option>
+                          <option value="sd">South Dakota</option>
+                          <option value="tn">Tennessee</option>
+                          <option value="tx">Texas</option>
+                          <option value="ut">Utah</option>
+                          <option value="vt">Vermont</option>
+                          <option value="va">Virginia</option>
+                          <option value="wa">Washington</option>
+                          <option value="wv">West Virginia</option>
+                          <option value="wi">Wisconsin</option>
+                          <option value="wy">Wyoming</option>
+                        </select>
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="country">Select County</label><br>
+                        <input type="checkbox" id="country" name="country" value="us">
+                        <label for="country">United State</label>
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="shape">Select Shape</label>
+                        <select id="shape">
+                          <option value="">Select...</option>
+                          <option value="changing">Changing</option>
+                          <option value="chevron">Chevron</option>
+                          <option value="cigar">Cigar</option>
+                          <option value="circle">Circle</option>
+                          <option value="cross">Cross</option>
+                          <option value="cylinder">Cylinder</option>
+                          <option value="disk">Disk</option>
+                          <option value="fireball">Fireball</option>
+                          <option value="flash">Flash</option>
+                          <option value="formation">Formation</option>
+                          <option value="light">Light</option>
+                          <option value="other">Other</option>
+                          <option value="oval">Oval</option>
+                          <option value="rectangle">Rectangle</option>
+                          <option value="sphere">Sphere</option>
+                          <option value="teardrop">Teardrop</option>
+                          <option value="triangle">Triangle</option>
+                          <option value="unknown">Unknown</option>
+                        </select>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    &nbsp;&nbsp;<button id="filter-btn" type="button" class="btn btn-default">Filter</button> &nbsp;
+                    <button id="reset-btn" type="button" class="btn btn-default">Reset</button> &nbsp;&nbsp;</div>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">City</th>
+                  <th class="table-head">State</th>
+                  <th class="table-head">Country</th>
+                  <th class="table-head">Shape</th>
+                  <th class="table-head">Duration</th>
+                  <th class="table-head">Comments</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">UFO Sightings</span>
+    </footer>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+<script src="static/js/data.js"></script>
+<script src="static/js/app.js"></script>
+</html>
