@@ -16,7 +16,9 @@ var applyReset = d3.select("#reset-btn");
 var applyDate = d3.select("#datepicker");
 var applyCity = d3.select("#city");
 var applyState = d3.select("#state");
-var applyCountry = d3.select("#country");
+var applyCountryUS = d3.select("#countryUS");
+var applyCountryCA = d3.select("#countryCA");
+var applyCountryAll = d3.select("#countryAll");
 var applyShape = d3.select("#shape");
 
 /**
@@ -31,7 +33,8 @@ function resetFilter(){
     document.getElementById("datepicker").value = "";
     document.getElementById("city").value = "";
     document.getElementById("state").value = "";
-    document.getElementById("country").checked = false;
+    document.getElementById("countryUS").checked = false;
+    document.getElementById("countryCA").checked = false;
     document.getElementById("countryAll").checked = true;
     document.getElementById("shape").value = "";
     
@@ -52,12 +55,14 @@ function setFilter(){
     state = document.getElementById("state").value;
 
     //Check if radio button is selected
-    if (document.getElementById("country").checked == true){
-        country = document.getElementById("country").value;
+    if (document.getElementById("countryUS").checked == true){
+        country = document.getElementById("countryUS").value;
+    }else if (document.getElementById("countryCA").checked == true){
+        country = document.getElementById("countryCA").value;
     }else if (document.getElementById("countryAll").checked == true){
         country = document.getElementById("countryAll").value;
     }
-    
+
     shape = document.getElementById("shape").value;
 
     //Reset data 
@@ -91,9 +96,13 @@ function populateData()
 
     }
     //check county radio button is checked
-    if (document.getElementById("country").checked == true){
+    if (document.getElementById("countryUS").checked == true){
          tdata = tdata.filter(d=> {return d.country === country.trim();});
      }
+    if (document.getElementById("countryCA").checked == true){
+        tdata = tdata.filter(d=> {return d.country === country.trim();});
+    }
+
     if (shape.length > 0){
         tdata = tdata.filter(d => {return d.shape === shape;});
     }
@@ -121,7 +130,9 @@ applyReset.on("click", resetFilter);
 applyDate.on("mouseout", setFilter);
 applyCity.on("mouseout", setFilter);
 applyState.on("mouseout", setFilter);
-applyCountry.on("click", setFilter);
+applyCountryUS.on("click", setFilter);
+applyCountryCA.on("click", setFilter);
+applyCountryAll.on("click", setFilter);
 applyShape.on("mouseout", setFilter);
 
 
